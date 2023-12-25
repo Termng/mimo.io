@@ -5,26 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
-    <title>{ % block title %} Home {% endblock %} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <title>{% block title %} Home {% endblock %}</title>
 </head>
 <body>
     <nav>
-        <h2>mimo.io</h2>
+        <h2 class="logo">mimo.io</h2>
 
-        <ul>
-            <li><a href="/login">Home</a></li>
-            <li><a href="/signup">Pricing</a></li>
-            <li><a href="/logout">About</a></li>
+        <ul class="nav-link">
             <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/sign-up">Sign Up</a></li>
         </ul>
     </nav>
 
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
 
-
-
-   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
-
 </html>
